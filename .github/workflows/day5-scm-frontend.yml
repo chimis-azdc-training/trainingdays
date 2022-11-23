@@ -48,7 +48,7 @@ jobs:
           retention-days: 30
 
   build-frontend:
-    if: github.repository == 'azuredevcollege/trainingdays'
+    if: github.repository == 'chimis-azdc-training/trainingdays'
     runs-on: ubuntu-latest
     env:
       FRONTEND_PROJECT_PATH: "./day5/apps/frontend/scmfe"
@@ -86,7 +86,7 @@ jobs:
           retention-days: 30
 
   deploy-to-dev:
-    if: (github.repository == 'azuredevcollege/trainingdays') && ((github.event_name == 'push') || (github.event_name == 'workflow_dispatch'))
+    if: (github.repository == 'chimis-azdc-training/trainingdays') && ((github.event_name == 'push') || (github.event_name == 'workflow_dispatch'))
     runs-on: ubuntu-latest
     environment: day5-scm-dev
     needs: [build-bicep, build-frontend]
